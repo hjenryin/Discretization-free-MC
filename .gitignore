@@ -1,0 +1,40 @@
+# data
+*.pkl
+*.pth
+*.npy
+*.jpg
+*.png
+expr_*/
+2018/
+*.tar.gz
+*.zip
+summary*
+ACS/
+
+# python
+__pycache__
+*.egg-info/
+
+# debug
+*debug*
+*save*
+*tmp*
+# *.csv
+all_data_with_identities.csv
+ISIC_2019_*.csv
+example.csv
+
+# log
+mlruns/
+
+# others
+.vscode/
+
+# ckpt
+checkpoint/
+checkpoint*/
+best_eval_acc.txt
+*.pt
+
+# include expr_utils
+!expr_utils/

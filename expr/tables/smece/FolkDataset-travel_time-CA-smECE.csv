@@ -1,0 +1,16 @@
+Method,$m$ at Cal,0
+Uncalibrated Baseline,/,2.46
+Multiaccurate Baseline,/,2.43 ± 0.32
+LSBoost,10,16.60 ± 0.79
+LSBoost,20,5.22 ± 0.66
+LSBoost,30,2.84 ± 0.42
+LSBoost,50,2.47 ± 0.26
+LSBoost,75,2.52 ± 0.19
+LSBoost,100,2.46 ± 0.14
+MCBoost,10,17.03 ± 0.00
+MCBoost,20,5.83 ± 0.00
+MCBoost,30,3.12 ± 0.00
+MCBoost,50,2.48 ± 0.37
+MCBoost,75,2.60 ± 0.23
+MCBoost,100,2.90 ± 0.83
+Ours,/,2.57 ± 0.33

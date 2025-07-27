@@ -1,0 +1,1 @@
+The json files here are the same as the plots at the end of the nupyter notebooks and illustrates the multicalibration error. `plot.ipynb` simply reads these json files and put them together.

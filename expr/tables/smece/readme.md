@@ -1,0 +1,2 @@
+The csv files here records the worst-group smECE. It's stored here after
+`acc_err_raw,loss_raw,smECE_raw,smECE_raw_no_groupsize=run(ds,expr_runners)` is run, and is processed from `smECE_raw_no_groupsize`.
