@@ -91,7 +91,7 @@ class FolkDataset(BaseDataset):
         fill_na=["JWMNP","WKHP"] # These should be numerical data that can be filled with 0
         remove_na=["POVPIP"] # numerical data, can't be categorized and can't be filled with 0.
 
-        definitions = data_source.get_definitions(download=True)
+        definitions = data_source.get_definitions(download=download)
         self.categories = folktables.generate_categories(features=self.features, definition_df=definitions)
         for k,v in self.categories.items():
             self.categories[k]={kk:vv.replace(" ","_").replace(",","_").replace(":","") for kk,vv in v.items()}

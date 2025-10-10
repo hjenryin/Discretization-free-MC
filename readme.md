@@ -1,4 +1,4 @@
-# Official implementation for "Discretization-free Multicalibration through Loss Minimization over Tree Ensembles"
+# Official implementation for "Discretization-free Multicalibration through Loss Minimization over Tree Ensembles" (In Neurips 2025)
 
 ## Environment setup
 
@@ -70,9 +70,24 @@ Stored to `expr/results/`
 - To search for the best hyperparameters and rerun the algorithms, remove both `expr/hyperparam_results` and `expr/results` before rerunning the corresponding notebook.
 - To only rerun the algorithms given the best hyperparameters in `expr/hyperparam_results`, remove `expr/results` and run the notebook again.
 
+## FAQ
+
+### Census data download
+- I got the following error when trying to initialize `FolkDataset`:
+  ```
+  Error Exception:  HTTPSConnectionPool(host='www2.census.gov', port=443): Max retries exceeded with url: /programs-surveys/acs/data/pums/2018/1-Year/csv_pca.zip (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)')))
+  ```
+  - There might be issues when downloading the data from the census website. You can manually download the data from [here](https://www2.census.gov/programs-surveys/acs/data/pums/2018/1-Year/csv_pca.zip), put the zip file in `dataset/folktables/2018/1-Year`, and then unzip it. You also need to download the definition file from [here](http://www2.census.gov/programs-surveys/acs/tech_docs/pums/data_dict/PUMS_Data_Dictionary_2018.csv) and put it at `dataset/folktables/2018/1-Year/definition.csv`.
+
+### Process got stuck
+- Notebook got stuck when replicating the results / the progress bar of joblib does not move.
+  - We have noticed an inefficiency of `smECE` from `relplot` when handling large data (see [this pr](https://github.com/apple/ml-calibration/pull/3)). A temporary workaround is to change all occurrence of `np.convolve` in your `site-packages/relplot/kernels.py` package to `scipy.signal.convolve`. This should speed up the computation significantly.
+
+
 ## Contact
 
 jinhy21@mails.tsinghua.edu.cn (Hongyi Henry Jin)
+
 
 ## Cite our paper
 
